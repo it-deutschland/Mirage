@@ -1,0 +1,16 @@
+:root {
+    --app-bg: #0b0f16;
+    --app-card: #161c27;
+    --app-sidebar: #111722;
+}
+body.app-dark { background: var(--app-bg); color: #e5e7eb; }
+.app-card { background: var(--app-card); border: 1px solid #243041; border-radius: 14px; }
+.sidebar { width: 260px; background: var(--app-sidebar); border-right: 1px solid #253248; }
+.sidebar .nav-link { color: #cbd5e1; border-radius: 8px; }
+.sidebar .nav-link:hover { background: #1f2937; color: #fff; }
+.amount-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 10px; }
+.amount-card { border: 1px solid #334155; border-radius: 10px; padding: 12px; text-align: center; cursor: pointer; transition: all .2s ease; }
+.amount-card input { display: none; }
+.amount-card:has(input:checked) { border-color: #3b82f6; background: #1d4ed8; }
+.fade-in { animation: fadeIn .25s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px);} to { opacity: 1; transform: translateY(0);} }
