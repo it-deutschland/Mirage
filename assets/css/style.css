@@ -685,4 +685,14 @@ a:not(.btn):hover {
         opacity: 1;
         transform: none;
     }
+
+    .brand-panel--animated:hover,
+    .brand-panel--animated:hover .brand-logo,
+    .brand-logo:hover,
+    .sidebar .nav-link:hover,
+    .sidebar .nav-link:focus,
+    .amount-card:hover,
+    .fx-tilt {
+        transform: none !important;
+    }
 }
