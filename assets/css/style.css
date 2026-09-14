@@ -695,4 +695,12 @@ a:not(.btn):hover {
     .fx-tilt {
         transform: none !important;
     }
+
+    .app-card::before,
+    .btn::before,
+    .app-card:hover::before,
+    .btn:hover::before {
+        transform: translateX(-135%) !important;
+        opacity: 0 !important;
+    }
 }

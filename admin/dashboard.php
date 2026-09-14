@@ -58,7 +58,7 @@ require __DIR__ . '/../includes/header.php';
     <div class="col-md-6 col-xl-3">
         <div class="app-card stat-card reveal-up">
             <div class="stat-icon">✓</div>
-            <div class="small text-secondary">Proofed</div>
+            <div class="small text-secondary">Verified</div>
             <div class="display-6 text-success"><?= e((string)$stats['proofed']) ?></div>
             <div class="small-muted">Freigegebene Einreichungen</div>
         </div>
