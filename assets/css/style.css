@@ -377,6 +377,12 @@ a:hover {
     box-shadow: 0 20px 36px rgba(197, 59, 255, 0.25);
 }
 
+.amount-card.is-selected {
+    border-color: rgba(255, 225, 255, 0.48);
+    background: linear-gradient(135deg, rgba(197, 59, 255, 0.28), rgba(123, 97, 255, 0.28));
+    box-shadow: 0 20px 36px rgba(197, 59, 255, 0.25);
+}
+
 .form-label {
     color: #f0dbff;
     letter-spacing: 0.04em;
@@ -575,9 +581,11 @@ a:hover {
         font-size: 1.8rem;
     }
 
-    .btn,
-    .form-control,
-    .form-select {
+    .app-public-layout .hero-copy .btn,
+    .app-public-layout form .btn,
+    .app-public-layout form .btn-link,
+    .app-public-layout .form-control,
+    .app-public-layout .form-select {
         width: 100%;
     }
 }
