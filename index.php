@@ -6,7 +6,7 @@ require_once __DIR__ . '/includes/functions.php';
 $title = 'Mirage Projekt';
 require __DIR__ . '/includes/header.php';
 ?>
-<section class="app-card hero-banner reveal-up">
+<section class="app-card hero-banner reveal-up fx-tilt" data-tilt-card>
     <div class="hero-media">
         <img src="<?= e($mirageHeaderImage) ?>" alt="Mirage VIP Header">
     </div>

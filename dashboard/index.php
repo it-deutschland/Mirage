@@ -29,7 +29,7 @@ require __DIR__ . '/../includes/header.php';
 
 <div class="row g-4 dashboard-grid">
     <div class="col-lg-5">
-        <div class="app-card p-4 fade-in h-100">
+        <div class="app-card p-4 fade-in h-100 fx-tilt" data-tilt-card>
             <span class="cyber-chip">Profil</span>
             <h2 class="h4 mt-3">Dein Zugang</h2>
             <ul class="panel-list mt-4">
@@ -58,8 +58,9 @@ require __DIR__ . '/../includes/header.php';
                     <label class="form-label">Betrag</label>
                     <div class="amount-grid">
                         <?php foreach (ALLOWED_AMOUNTS as $amount): ?>
-                            <label class="amount-card">
-                                <input type="radio" name="amount" value="<?= e((string)$amount) ?>" required>
+                            <?php $amountId = 'amount_' . $amount; ?>
+                            <input class="amount-input" type="radio" id="<?= e($amountId) ?>" name="amount" value="<?= e((string)$amount) ?>" required>
+                            <label class="amount-card" for="<?= e($amountId) ?>">
                                 <span><?= e((string)$amount) ?> €</span>
                             </label>
                         <?php endforeach; ?>

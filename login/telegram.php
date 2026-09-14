@@ -73,7 +73,7 @@ require __DIR__ . '/../includes/header.php';
         </section>
     </div>
     <div class="col-lg-5">
-        <div class="app-card p-4 p-lg-5 fade-in h-100">
+        <div class="app-card p-4 p-lg-5 fade-in h-100 fx-tilt" data-tilt-card>
             <span class="cyber-chip">Secure Login</span>
             <h2 class="h4 mt-3 mb-3">Login mit Telegram</h2>
             <p class="text-secondary">Melden Sie sich sicher über das Telegram Login Widget an.</p>

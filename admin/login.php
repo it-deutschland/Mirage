@@ -60,7 +60,7 @@ require __DIR__ . '/../includes/header.php';
 ?>
 <div class="row g-4 login-grid justify-content-center">
     <div class="col-lg-5">
-        <div class="app-card p-4 p-lg-5 fade-in h-100">
+        <div class="app-card p-4 p-lg-5 fade-in h-100 fx-tilt" data-tilt-card>
             <span class="cyber-chip">Restricted Access</span>
             <h1 class="h4 mt-3 mb-3">Admin Login</h1>
             <p class="text-secondary">Der Login-Prozess bleibt unverändert, erscheint jetzt jedoch wie ein hochwertiges Control-Deck im Mirage Stil.</p>

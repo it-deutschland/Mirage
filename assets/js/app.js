@@ -6,6 +6,11 @@ document.querySelectorAll('[data-tilt-card]').forEach((card) => {
   const strength = 10;
   let frame = null;
   let pointer = null;
+  const focusableChild = card.querySelector('a, button, input, select, textarea');
+
+  if (!focusableChild) {
+    return;
+  }
 
   const renderTilt = () => {
     if (!pointer) {
@@ -39,13 +44,27 @@ document.querySelectorAll('[data-tilt-card]').forEach((card) => {
     }
     card.style.transform = '';
   });
+
+  if (focusableChild) {
+    card.addEventListener('focusin', () => {
+      card.style.transform = 'perspective(900px) rotateX(2deg) rotateY(-2deg) translateY(-2px)';
+    });
+
+    card.addEventListener('focusout', (event) => {
+      if (!card.contains(event.relatedTarget)) {
+        card.style.transform = '';
+      }
+    });
 });
 
 document.querySelectorAll('.amount-grid').forEach((grid) => {
   const updateSelection = () => {
-    grid.querySelectorAll('.amount-card').forEach((card) => {
-      const input = card.querySelector('input[type="radio"]');
-      card.classList.toggle('is-selected', Boolean(input?.checked));
+    grid.querySelectorAll('.amount-input').forEach((input) => {
+      const card = input.nextElementSibling;
+
+      if (card?.classList.contains('amount-card')) {
+        card.classList.toggle('is-selected', input.checked);
+      }
     });
   };
 
