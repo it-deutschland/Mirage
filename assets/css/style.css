@@ -688,8 +688,9 @@ a:not(.btn):hover {
 
     .fade-in,
     .reveal-up {
-        opacity: 1;
-        transform: none;
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
     }
 
     .brand-panel--animated:hover,

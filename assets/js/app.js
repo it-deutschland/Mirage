@@ -1,5 +1,12 @@
 document.querySelectorAll('.alert').forEach((el) => {
-  setTimeout(() => el.classList.add('fade'), 3800);
+  setTimeout(() => {
+    el.classList.add('fade');
+
+    window.setTimeout(() => {
+      el.setAttribute('hidden', 'hidden');
+      el.setAttribute('aria-hidden', 'true');
+    }, 450);
+  }, 3800);
 });
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
