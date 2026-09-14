@@ -1,15 +1,17 @@
-document.querySelectorAll('.alert').forEach((el) => {
-  setTimeout(() => {
-    el.classList.add('alert-dismissed');
-
-    window.setTimeout(() => {
-      el.setAttribute('hidden', 'hidden');
-      el.setAttribute('aria-hidden', 'true');
-    }, 450);
-  }, 3800);
-});
-
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (!prefersReducedMotion) {
+  document.querySelectorAll('.alert').forEach((el) => {
+    setTimeout(() => {
+      el.classList.add('alert-dismissed');
+
+      window.setTimeout(() => {
+        el.setAttribute('hidden', 'hidden');
+        el.setAttribute('aria-hidden', 'true');
+      }, 450);
+    }, 3800);
+  });
+}
 
 document.querySelectorAll('[data-tilt-card]').forEach((card) => {
   if (prefersReducedMotion) {
@@ -42,7 +44,7 @@ document.querySelectorAll('[data-tilt-card]').forEach((card) => {
     frame = null;
   };
 
-  card.addEventListener('mousemove', (event) => {
+  card.addEventListener('pointermove', (event) => {
     pointer = { x: event.clientX, y: event.clientY };
 
     if (frame === null) {
@@ -50,7 +52,7 @@ document.querySelectorAll('[data-tilt-card]').forEach((card) => {
     }
   });
 
-  card.addEventListener('mouseleave', () => {
+  card.addEventListener('pointerleave', () => {
     pointer = null;
     if (frame !== null) {
       window.cancelAnimationFrame(frame);
