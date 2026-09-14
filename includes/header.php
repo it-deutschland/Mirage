@@ -7,8 +7,8 @@ $title = $title ?? 'Mirage Projekt';
 $admin = $admin ?? null;
 $showSidebar = $showSidebar ?? false;
 $layoutHasSidebar = $showSidebar && is_array($admin);
-$mirageHeaderImage = $mirageHeaderImage ?? 'https://github.com/user-attachments/assets/066dcfe4-6ace-4feb-90f5-e77bb8337899';
-$mirageLogoImage = $mirageLogoImage ?? 'https://github.com/user-attachments/assets/1087f713-ae1e-446f-9b57-ca1fab7975fe';
+$mirageHeaderImage = $mirageHeaderImage ?? appUrl('/assets/img/mirage-vip-header.svg');
+$mirageLogoImage = $mirageLogoImage ?? appUrl('/assets/img/mirage-vip-logo.svg');
 ?><!doctype html>
 <html lang="de">
 <head>
@@ -20,12 +20,11 @@ $mirageLogoImage = $mirageLogoImage ?? 'https://github.com/user-attachments/asse
 </head>
 <body class="app-dark<?= $layoutHasSidebar ? ' app-admin-layout' : ' app-public-layout' ?>">
 <div class="app-chrome">
-    <div class="app-noise"></div>
     <div class="app-grid"></div>
 <?php if ($layoutHasSidebar): ?>
 <div class="d-flex min-vh-100">
     <aside class="sidebar p-3">
-        <div class="brand-panel mb-4 fx-tilt" data-tilt-card>
+        <div class="brand-panel mb-4">
             <img class="brand-logo" src="<?= e($mirageLogoImage) ?>" alt="Mirage VIP Logo">
             <div>
                 <div class="eyebrow">Control Nexus</div>
@@ -52,7 +51,7 @@ $mirageLogoImage = $mirageLogoImage ?? 'https://github.com/user-attachments/asse
     <main class="flex-grow-1 p-4">
 <?php else: ?>
 <header class="topbar container py-3">
-    <div class="brand-panel brand-panel--compact fx-tilt" data-tilt-card>
+    <div class="brand-panel brand-panel--compact">
         <img class="brand-logo" src="<?= e($mirageLogoImage) ?>" alt="Mirage VIP Logo">
         <div>
             <div class="eyebrow">Telegram First</div>

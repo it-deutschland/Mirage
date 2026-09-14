@@ -48,7 +48,7 @@ require __DIR__ . '/../includes/header.php';
 
 <div class="row g-4">
     <div class="col-md-6 col-xl-3">
-        <div class="app-card stat-card reveal-up fx-tilt" data-tilt-card>
+        <div class="app-card stat-card reveal-up">
             <div class="stat-icon">⌛</div>
             <div class="small text-secondary">Pending</div>
             <div class="display-6"><?= e((string)$stats['pending']) ?></div>
@@ -56,7 +56,7 @@ require __DIR__ . '/../includes/header.php';
         </div>
     </div>
     <div class="col-md-6 col-xl-3">
-        <div class="app-card stat-card reveal-up fx-tilt" data-tilt-card>
+        <div class="app-card stat-card reveal-up">
             <div class="stat-icon">✓</div>
             <div class="small text-secondary">Proofed</div>
             <div class="display-6 text-success"><?= e((string)$stats['proofed']) ?></div>
@@ -64,7 +64,7 @@ require __DIR__ . '/../includes/header.php';
         </div>
     </div>
     <div class="col-md-6 col-xl-3">
-        <div class="app-card stat-card reveal-up fx-tilt" data-tilt-card>
+        <div class="app-card stat-card reveal-up">
             <div class="stat-icon">✕</div>
             <div class="small text-secondary">Invalid</div>
             <div class="display-6 text-danger"><?= e((string)$stats['invalid']) ?></div>
@@ -72,7 +72,7 @@ require __DIR__ . '/../includes/header.php';
         </div>
     </div>
     <div class="col-md-6 col-xl-3">
-        <div class="app-card stat-card reveal-up fx-tilt" data-tilt-card>
+        <div class="app-card stat-card reveal-up">
             <div class="stat-icon">👥</div>
             <div class="small text-secondary">Users</div>
             <div class="display-6 text-info"><?= e((string)$stats['users']) ?></div>
