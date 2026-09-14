@@ -10,16 +10,17 @@ $user = requireUser();
 $title = 'Dashboard';
 require __DIR__ . '/../includes/header.php';
 ?>
-<section class="app-card hero-banner reveal-up mb-4">
-    <div class="hero-media">
+<section class="app-card hero-stage hero-stage--centered reveal-up mb-4">
+    <div class="hero-stage__glow"></div>
+    <div class="hero-stage__media">
         <img src="<?= e($mirageHeaderImage) ?>" alt="Mirage VIP Header">
     </div>
-    <div class="hero-overlay p-4 p-lg-5">
-        <div class="hero-copy">
+    <div class="hero-stage__content p-4 p-lg-5">
+        <div class="hero-copy hero-copy--centered mx-auto">
             <span class="cyber-chip">VIP Dashboard</span>
             <h1 class="hero-title mt-3 mb-3">Willkommen zurück, <?= e($user['name']) ?></h1>
-            <p class="mb-0">Dein Zugang und der Voucher-Ablauf bleiben unverändert, werden nun aber in einer futuristischen Mirage-Oberfläche mit mehr Tiefe, Licht und Bewegung präsentiert.</p>
-            <div class="hero-meta">
+            <p class="mb-0">Die Mirage Header-Grafik sitzt jetzt zentral als Hauptfokus im Dashboard und verbindet den bestehenden Voucher-Ablauf mit einer luxuriösen Telegram-VIP-Inszenierung.</p>
+            <div class="hero-meta hero-meta--centered">
                 <span class="cyber-chip">@<?= e((string)($user['telegram_username'] ?? 'guest')) ?></span>
                 <span class="cyber-chip">Telegram ID <?= e((string) $user['telegram_id']) ?></span>
             </div>

@@ -24,7 +24,7 @@ $mirageLogoImage = $mirageLogoImage ?? appUrl('/assets/img/mirage-vip-logo.svg')
 <?php if ($layoutHasSidebar): ?>
 <div class="d-flex min-vh-100">
     <aside class="sidebar p-3">
-        <div class="brand-panel mb-4">
+        <div class="brand-panel brand-panel--animated mb-4">
             <img class="brand-logo" src="<?= e($mirageLogoImage) ?>" alt="Mirage VIP Logo">
             <div>
                 <div class="eyebrow">Control Nexus</div>
@@ -51,7 +51,7 @@ $mirageLogoImage = $mirageLogoImage ?? appUrl('/assets/img/mirage-vip-logo.svg')
     <main class="flex-grow-1 p-4">
 <?php else: ?>
 <header class="topbar container py-3">
-    <div class="brand-panel brand-panel--compact">
+    <div class="brand-panel brand-panel--compact brand-panel--animated">
         <img class="brand-logo" src="<?= e($mirageLogoImage) ?>" alt="Mirage VIP Logo">
         <div>
             <div class="eyebrow">Telegram First</div>

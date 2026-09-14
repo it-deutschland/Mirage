@@ -102,6 +102,16 @@ a:hover {
     backdrop-filter: blur(18px);
 }
 
+.brand-panel--animated {
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-panel--animated:hover {
+    transform: translateY(-3px);
+    border-color: rgba(241, 201, 255, 0.3);
+    box-shadow: 0 34px 80px rgba(120, 49, 191, 0.42);
+}
+
 .brand-panel--compact {
     max-width: 430px;
 }
@@ -114,6 +124,15 @@ a:hover {
     border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 12px 30px rgba(197, 59, 255, 0.26);
     background: rgba(255, 255, 255, 0.06);
+    animation: pulseGlow 2.8s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.brand-panel--animated:hover .brand-logo,
+.brand-logo:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18), 0 18px 42px rgba(197, 59, 255, 0.42);
+    filter: saturate(1.08);
 }
 
 .eyebrow {
@@ -152,12 +171,31 @@ a:hover {
     transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 
+.sidebar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.45rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(246, 201, 255, 0.9), transparent);
+    transform: scaleX(0.15);
+    opacity: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
 .sidebar .nav-link:hover,
 .sidebar .nav-link:focus {
     color: #fff;
     background: rgba(197, 59, 255, 0.14);
     border-color: rgba(229, 187, 255, 0.22);
     transform: translateX(4px);
+}
+
+.sidebar .nav-link:hover::after,
+.sidebar .nav-link:focus::after {
+    transform: scaleX(1);
+    opacity: 1;
 }
 
 .sidebar .nav-link:focus-visible {
@@ -193,6 +231,51 @@ a:hover {
 
 .hero-banner {
     padding: 0;
+}
+
+.hero-stage {
+    padding: 0;
+}
+
+.hero-stage__glow {
+    position: absolute;
+    inset: 12% 20% auto;
+    height: 10rem;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(195, 91, 255, 0.35) 0%, rgba(195, 91, 255, 0) 72%);
+    filter: blur(18px);
+    pointer-events: none;
+}
+
+.hero-stage__media {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    padding: 2.2rem 2rem 0;
+}
+
+.hero-stage__media img {
+    width: min(100%, 980px);
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0 22px 40px rgba(141, 56, 255, 0.35));
+}
+
+.hero-stage__content {
+    position: relative;
+    z-index: 1;
+    margin-top: -1.25rem;
+}
+
+.hero-copy--centered {
+    max-width: 860px;
+    text-align: center;
+}
+
+.hero-meta--centered {
+    justify-content: center;
 }
 
 .hero-banner .hero-media {
@@ -525,6 +608,18 @@ a:hover {
     }
 }
 
+@keyframes pulseGlow {
+    0%,
+    100% {
+        box-shadow: 0 12px 30px rgba(197, 59, 255, 0.26);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), 0 20px 46px rgba(197, 59, 255, 0.42);
+        transform: scale(1.03);
+    }
+}
+
 @media (max-width: 991.98px) {
     .topbar {
         flex-direction: column;
@@ -542,6 +637,14 @@ a:hover {
 
     .hero-banner .hero-overlay {
         min-height: 280px;
+    }
+
+    .hero-stage__media {
+        padding: 1.5rem 1rem 0;
+    }
+
+    .hero-stage__content {
+        margin-top: -0.5rem;
     }
 }
 
