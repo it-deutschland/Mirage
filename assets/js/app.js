@@ -61,18 +61,3 @@ document.querySelectorAll('[data-tilt-card]').forEach((card) => {
     }
   });
 });
-
-document.querySelectorAll('.amount-grid').forEach((grid) => {
-  const updateSelection = () => {
-    grid.querySelectorAll('.amount-input').forEach((input) => {
-      const card = input.nextElementSibling;
-
-      if (card?.classList.contains('amount-card')) {
-        card.classList.toggle('is-selected', input.checked);
-      }
-    });
-  };
-
-  grid.addEventListener('change', updateSelection);
-  updateSelection();
-});
