@@ -1,6 +1,6 @@
 document.querySelectorAll('.alert').forEach((el) => {
   setTimeout(() => {
-    el.classList.add('fade');
+    el.classList.add('alert-dismissed');
 
     window.setTimeout(() => {
       el.setAttribute('hidden', 'hidden');
@@ -19,9 +19,10 @@ document.querySelectorAll('[data-tilt-card]').forEach((card) => {
   const strength = 10;
   let frame = null;
   let pointer = null;
-  const focusableChild = card.querySelector('a[href], button, input, select, textarea, summary, [tabindex]:not([tabindex="-1"])');
+  const focusableSelector = 'a[href], button, input, select, textarea, summary, [tabindex]:not([tabindex="-1"])';
+  const hasFocusableTarget = card.matches(focusableSelector) || card.querySelector(focusableSelector);
 
-  if (!focusableChild) {
+  if (!hasFocusableTarget) {
     return;
   }
 

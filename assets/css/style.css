@@ -557,7 +557,7 @@ a:not(.btn):hover {
     transition: opacity 0.4s ease;
 }
 
-.alert.fade {
+.alert.alert-dismissed {
     opacity: 0;
 }
 
