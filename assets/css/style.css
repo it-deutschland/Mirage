@@ -616,4 +616,10 @@ a:hover {
         animation: none !important;
         transition: none !important;
     }
+
+    .fade-in,
+    .reveal-up {
+        opacity: 1;
+        transform: none;
+    }
 }
