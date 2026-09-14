@@ -8,8 +8,8 @@ document.querySelectorAll('[data-tilt-card]').forEach((card) => {
   let pointer = null;
   const focusableChild = card.querySelector('a, button, input, select, textarea');
 
-  if (!focusableChild) {
-    return;
+  if (!focusableChild && !card.hasAttribute('tabindex')) {
+    card.setAttribute('tabindex', '0');
   }
 
   const renderTilt = () => {

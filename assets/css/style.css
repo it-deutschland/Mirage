@@ -487,7 +487,18 @@ a:hover {
 
 .table > :not(caption) > * > * {
     color: #f4edff;
-    background: transparent;
+}
+
+.table-dark thead th {
+    background: rgba(14, 10, 30, 0.94);
+}
+
+.table-dark tbody td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.table-dark.table-hover tbody tr:hover td {
+    background: rgba(255, 255, 255, 0.06);
 }
 
 .alert {
@@ -514,6 +525,11 @@ a:hover {
 .fx-tilt {
     transform-style: preserve-3d;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fx-tilt:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.9);
+    outline-offset: 3px;
 }
 
 .login-grid,
