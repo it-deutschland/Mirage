@@ -58,11 +58,14 @@ if (requestMethod() === 'POST') {
 $title = 'Admin Login';
 require __DIR__ . '/../includes/header.php';
 ?>
-<div class="row justify-content-center">
+<div class="row g-4 login-grid justify-content-center">
     <div class="col-lg-5">
-        <div class="card app-card p-4 fade-in">
-            <h1 class="h4 mb-3">Admin Login</h1>
+        <div class="app-card p-4 p-lg-5 fade-in h-100">
+            <span class="cyber-chip">Restricted Access</span>
+            <h1 class="h4 mt-3 mb-3">Admin Login</h1>
+            <p class="text-secondary">Der Login-Prozess bleibt unverändert, erscheint jetzt jedoch wie ein hochwertiges Control-Deck im Mirage Stil.</p>
             <?php if ($error): ?><div class="alert alert-danger"><?= e($error) ?></div><?php endif; ?>
+            <div class="muted-divider my-4"></div>
             <form method="post">
                 <?= csrfField('admin_login') ?>
                 <div class="mb-3"><label class="form-label">Username</label><input class="form-control" name="username" required maxlength="100"></div>
@@ -71,6 +74,25 @@ require __DIR__ . '/../includes/header.php';
                 <a class="btn btn-link text-info" href="<?= e(appUrl('/admin/register')) ?>">Registrieren</a>
             </form>
         </div>
+    </div>
+    <div class="col-lg-6">
+        <section class="app-card hero-banner reveal-up h-100">
+            <div class="hero-media">
+                <img src="<?= e($mirageHeaderImage) ?>" alt="Mirage VIP Header">
+            </div>
+            <div class="hero-overlay p-4 p-lg-5">
+                <div class="hero-copy">
+                    <span class="cyber-chip">Backoffice Access</span>
+                    <h2 class="hero-title mt-3 mb-3">Futuristisches Admin Gateway</h2>
+                    <p class="mb-0">Für das Mirage Team entsteht ein auffälligerer Cyberpunk-Einstieg mit starken Lila-Verläufen, glänzenden Flächen und animierten Akzenten – ohne Änderungen am eigentlichen Login-Ablauf.</p>
+                    <div class="feature-stack mt-4">
+                        <span class="cyber-chip">Glass Panels</span>
+                        <span class="cyber-chip">Neon Sidebar</span>
+                        <span class="cyber-chip">Live Glow</span>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </div>
 <?php require __DIR__ . '/../includes/footer.php'; ?>
