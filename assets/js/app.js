@@ -12,7 +12,7 @@ document.querySelectorAll('[data-tilt-card]').forEach((card) => {
   const strength = 10;
   let frame = null;
   let pointer = null;
-  const focusableChild = card.querySelector('a, button, input, select, textarea');
+  const focusableChild = card.querySelector('a[href], button, input, select, textarea, summary, [tabindex]:not([tabindex="-1"])');
 
   if (!focusableChild) {
     return;

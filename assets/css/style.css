@@ -218,11 +218,17 @@ a:not(.btn):hover {
     content: "";
     position: absolute;
     inset: 0;
+    z-index: 0;
     background: linear-gradient(120deg, transparent 25%, rgba(255, 255, 255, 0.09) 50%, transparent 75%);
     transform: translateX(-140%);
     opacity: 0.6;
     transition: transform 0.8s ease;
     pointer-events: none;
+}
+
+.app-card > * {
+    position: relative;
+    z-index: 1;
 }
 
 .app-card:hover::before {
@@ -527,7 +533,7 @@ a:not(.btn):hover {
     border-color: rgba(229, 187, 255, 0.1);
 }
 
-.table > :not(caption) > * > * {
+.table-dark > :not(caption) > * > * {
     color: #f4edff;
 }
 
