@@ -60,11 +60,11 @@ main,
     z-index: 1;
 }
 
-a {
+a:not(.btn) {
     color: #f2b7ff;
 }
 
-a:hover {
+a:not(.btn):hover {
     color: #fff;
 }
 

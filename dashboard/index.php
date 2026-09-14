@@ -30,7 +30,7 @@ require __DIR__ . '/../includes/header.php';
 
 <div class="row g-4 dashboard-grid">
     <div class="col-lg-5">
-        <div class="app-card p-4 fade-in h-100 fx-tilt" data-tilt-card>
+        <div class="app-card p-4 fade-in h-100">
             <span class="cyber-chip">Profil</span>
             <h2 class="h4 mt-3">Dein Zugang</h2>
             <ul class="panel-list mt-4">
