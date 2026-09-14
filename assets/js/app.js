@@ -45,16 +45,15 @@ document.querySelectorAll('[data-tilt-card]').forEach((card) => {
     card.style.transform = '';
   });
 
-  if (focusableChild) {
-    card.addEventListener('focusin', () => {
-      card.style.transform = 'perspective(900px) rotateX(2deg) rotateY(-2deg) translateY(-2px)';
-    });
+  card.addEventListener('focusin', () => {
+    card.style.transform = 'perspective(900px) rotateX(2deg) rotateY(-2deg) translateY(-2px)';
+  });
 
-    card.addEventListener('focusout', (event) => {
-      if (!card.contains(event.relatedTarget)) {
-        card.style.transform = '';
-      }
-    });
+  card.addEventListener('focusout', (event) => {
+    if (!card.contains(event.relatedTarget)) {
+      card.style.transform = '';
+    }
+  });
 });
 
 document.querySelectorAll('.amount-grid').forEach((grid) => {
