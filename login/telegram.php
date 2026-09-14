@@ -52,19 +52,46 @@ if (isset($_GET['id'], $_GET['hash'], $_GET['auth_date'])) {
 $title = 'Telegram Login';
 require __DIR__ . '/../includes/header.php';
 ?>
-<div class="row justify-content-center">
-    <div class="col-lg-6">
-        <div class="card app-card p-4 fade-in">
-            <h1 class="h4 mb-3">Login mit Telegram</h1>
+<div class="row g-4 login-grid">
+    <div class="col-lg-7">
+        <section class="app-card hero-banner reveal-up h-100">
+            <div class="hero-media">
+                <img src="<?= e($mirageHeaderImage) ?>" alt="Mirage VIP Header">
+            </div>
+            <div class="hero-overlay p-4 p-lg-5">
+                <div class="hero-copy">
+                    <span class="cyber-chip">Telegram Gateway</span>
+                    <h1 class="hero-title mt-3 mb-3">Direkter Eintritt in den Mirage VIP Bereich</h1>
+                    <p class="mb-0">Nutzer melden sich weiterhin sicher per Telegram an und werden danach unverändert in ihr Dashboard weitergeleitet – jetzt in einer deutlich atmosphärischeren Neon-VIP-Umgebung.</p>
+                    <div class="feature-stack mt-4">
+                        <span class="cyber-chip">Fast Auth</span>
+                        <span class="cyber-chip">Private Session</span>
+                        <span class="cyber-chip">Premium Staging</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-5">
+        <div class="app-card p-4 p-lg-5 fade-in h-100 fx-tilt" data-tilt-card>
+            <span class="cyber-chip">Secure Login</span>
+            <h2 class="h4 mt-3 mb-3">Login mit Telegram</h2>
             <p class="text-secondary">Melden Sie sich sicher über das Telegram Login Widget an.</p>
-            <script async src="https://telegram.org/js/telegram-widget.js?22"
-                    data-telegram-login="<?= e((string) cfg('TELEGRAM_BOT_USERNAME', '')) ?>"
-                    data-size="large"
-                    data-auth-url="<?= e(appUrl('/login/telegram')) ?>"
-                    data-request-access="write"></script>
+            <div class="muted-divider my-4"></div>
+            <div class="surface-panel p-4">
+                <script async src="https://telegram.org/js/telegram-widget.js?22"
+                        data-telegram-login="<?= e((string) cfg('TELEGRAM_BOT_USERNAME', '')) ?>"
+                        data-size="large"
+                        data-auth-url="<?= e(appUrl('/login/telegram')) ?>"
+                        data-request-access="write"></script>
+            </div>
             <?php if (!cfg('TELEGRAM_BOT_USERNAME')): ?>
                 <div class="alert alert-warning mt-3">TELEGRAM_BOT_USERNAME ist nicht konfiguriert.</div>
             <?php endif; ?>
+            <ul class="panel-list mt-4">
+                <li><strong>Telegram-only Flow</strong><span class="small-muted">Bestehende Authentifizierung bleibt vollständig erhalten.</span></li>
+                <li><strong>VIP Fokus</strong><span class="small-muted">Optik und Oberfläche wirken exklusiver, moderner und hochwertiger.</span></li>
+            </ul>
         </div>
     </div>
 </div>

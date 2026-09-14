@@ -7,6 +7,8 @@ $title = $title ?? 'Mirage Projekt';
 $admin = $admin ?? null;
 $showSidebar = $showSidebar ?? false;
 $layoutHasSidebar = $showSidebar && is_array($admin);
+$mirageHeaderImage = $mirageHeaderImage ?? appUrl('/assets/img/mirage-vip-header.svg');
+$mirageLogoImage = $mirageLogoImage ?? appUrl('/assets/img/mirage-vip-logo.svg');
 ?><!doctype html>
 <html lang="de">
 <head>
@@ -16,11 +18,20 @@ $layoutHasSidebar = $showSidebar && is_array($admin);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?= e(appUrl('/assets/css/style.css')) ?>" rel="stylesheet">
 </head>
-<body class="app-dark">
+<body class="app-dark<?= $layoutHasSidebar ? ' app-admin-layout' : ' app-public-layout' ?>">
+<div class="app-chrome">
+    <div class="app-grid"></div>
 <?php if ($layoutHasSidebar): ?>
 <div class="d-flex min-vh-100">
     <aside class="sidebar p-3">
-        <h4 class="mb-4">Mirage Admin</h4>
+        <div class="brand-panel brand-panel--animated mb-4">
+            <img class="brand-logo" src="<?= e($mirageLogoImage) ?>" alt="Mirage VIP Logo">
+            <div>
+                <div class="eyebrow">Control Nexus</div>
+                <h4 class="mb-1">Mirage Admin</h4>
+                <p class="brand-subtitle mb-0">Telegram VIP Access</p>
+            </div>
+        </div>
         <nav class="nav flex-column gap-2">
             <a class="nav-link" href="<?= e(appUrl('/admin/dashboard')) ?>">Dashboard</a>
             <a class="nav-link" href="<?= e(appUrl('/admin/vouchers')) ?>">Voucher</a>
@@ -39,5 +50,19 @@ $layoutHasSidebar = $showSidebar && is_array($admin);
     </aside>
     <main class="flex-grow-1 p-4">
 <?php else: ?>
+<header class="topbar container py-3">
+    <div class="brand-panel brand-panel--compact brand-panel--animated">
+        <img class="brand-logo" src="<?= e($mirageLogoImage) ?>" alt="Mirage VIP Logo">
+        <div>
+            <div class="eyebrow">Telegram First</div>
+            <h4 class="mb-1">Mirage VIP</h4>
+            <p class="brand-subtitle mb-0">Private Access Lounge</p>
+        </div>
+    </div>
+    <div class="topbar-actions">
+        <span class="cyber-chip">Secure Login</span>
+        <span class="cyber-chip">Premium Flow</span>
+    </div>
+</header>
 <main class="container py-4">
 <?php endif; ?>
